@@ -2,7 +2,7 @@
 
 This directory houses two scripts, a setup script and a script to assist in loading temporary AWS CLI credentials into shell environment variables.
 
-> :loudspeaker: [!IMPORTANT] 
+> :loudspeaker: **Important**
 > These scripts assume you are using `zsh` as your shell. Updates will be made for other default shells.
 
 
