@@ -60,7 +60,6 @@ main() {
   done
 
   ensure_root
-  mkdir -p "$(dirname "$LOG_FILE")"
   echo "$(timestamp) - START full-update" | tee -a "$LOG_FILE"
 
   if ! wait_for_apt_lock; then
