@@ -33,7 +33,7 @@ WAIT_MAX=30
 
 wait_for_apt_lock() {
   local tries=0
-  while fuser /var/lib/dpkg/lock >/dev/null 2>&1 || fuser /var/lib/apt/lists/lock >/dev/null 2>&1 || fuser /var/cache/apt/archives/lock >/dev/null 2>&1; do
+  while fuser /var/lib/dpkg/lock >/dev/null 2>&1 || fuser /var/lib/dpkg/lock-frontend >/dev/null 2>&1 || fuser /var/lib/apt/lists/lock >/dev/null 2>&1 || fuser /var/cache/apt/archives/lock >/dev/null 2>&1; do
     if [ "$tries" -ge "$WAIT_MAX" ]; then
       echo "Timed out waiting for apt/dpkg locks" | tee -a "$LOG_FILE"
       return 1
