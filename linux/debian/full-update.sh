@@ -79,7 +79,7 @@ main() {
 
   echo "Cleaning up..." | tee -a "$LOG_FILE"
   apt-get autoremove -y 2>&1 | tee -a "$LOG_FILE" || true
-  apt-get autoclean -y 2>&1 | tee -a "$LOG_FILE" || true
+  apt-get autoclean 2>&1 | tee -a "$LOG_FILE" || true
 
   if [ -f /var/run/reboot-required ] || [ -f /var/run/reboot-required.pkgs ]; then
     echo "Reboot required after updates" | tee -a "$LOG_FILE"
