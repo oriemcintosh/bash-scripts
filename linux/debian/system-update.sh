@@ -37,7 +37,6 @@ timestamp() { date --rfc-3339=seconds; }
 main() {
   ensure_root
 
-  mkdir -p "$(dirname "$LOG_FILE")"
   echo "$(timestamp) - START system-update" | tee -a "$LOG_FILE"
 
   if ! wait_for_apt_lock; then
