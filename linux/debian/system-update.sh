@@ -45,7 +45,7 @@ main() {
   fi
 
   echo "Running apt-get update..." | tee -a "$LOG_FILE"
-  apt-get update -y 2>&1 | tee -a "$LOG_FILE"
+  apt-get update 2>&1 | tee -a "$LOG_FILE"
 
   echo "Running unattended-upgrades (security) if available..." | tee -a "$LOG_FILE"
   if command -v unattended-upgrade >/dev/null 2>&1; then
